@@ -53,6 +53,15 @@ const globalStyle = ScaledSheet.create(
     },
     borWhite: {
       borderColor: pallete.white,
+      borderWidth: '2@s',
+    },
+    borTransparent: {
+      borderColor: pallete.transparent,
+      borderWidth: '1@s',
+    },
+    borPrimary: {
+      borderColor: pallete.primary,
+      borderWidth: '1@s',
     },
     borderWidth1: {
       borderWidth: '1@s',
@@ -1006,6 +1015,21 @@ const globalStyle = ScaledSheet.create(
     textWhite: {
       color: pallete.white,
     },
+    textGray: {
+      color: pallete.textGray,
+    },
+    textError: {
+      color: pallete.errortext,
+    },
+    textDelivered: {
+      color: pallete.deliveredtext,
+    },
+    textReceived: {
+      color: pallete.receivedText,
+    },
+    textHold: {
+      color: pallete.holdtext,
+    },
     textRight: {
       textAlign: 'right',
     },
@@ -1013,8 +1037,23 @@ const globalStyle = ScaledSheet.create(
     bgTextInput: {
       backgroundColor: pallete.mainGray,
     },
+    bgTransparent: {
+      backgroundColor: pallete.transparent,
+    },
     bgWhite: {
       backgroundColor: pallete.white,
+    },
+    bgError: {
+      backgroundColor: pallete.errorBg,
+    },
+    bgDelivered: {
+      backgroundColor: pallete.deliveredBg,
+    },
+    bgReceived: {
+      backgroundColor: pallete.receivedBg,
+    },
+    bgHold: {
+      backgroundColor: pallete.holdBg,
     },
     bgPrimary: {
       backgroundColor: pallete.primary,

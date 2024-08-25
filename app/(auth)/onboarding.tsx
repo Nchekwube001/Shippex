@@ -58,11 +58,11 @@ const Onboarding = () => {
     scaleVal.value = withTiming(
       1.3,
       {
-        duration: 1300,
+        duration: 2000,
         // duration: 6000,
       },
       () => {
-        // runOnJS(setDone)(true);
+        runOnJS(setDone)(true);
       },
     );
   }, [scaleVal]);

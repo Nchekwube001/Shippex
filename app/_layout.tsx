@@ -68,7 +68,7 @@ const MainNavigation = () => {
         headerShown: false,
       }}>
       <Stack.Screen name="(auth)" />
-      <Stack.Screen name="(maingroup)" />
+      <Stack.Screen name="(main)" />
     </Stack>
   );
   // return <Slot screenOptions={{headerShown: false}} />;

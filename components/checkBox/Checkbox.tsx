@@ -10,12 +10,14 @@ import {Platform} from 'react-native';
 interface checkBoxProps extends CheckboxProps {
   value: boolean;
   small?: boolean;
-  setValue: (val: any) => void;
+  setValue?: (val: any) => void;
+  disabled?: boolean;
 }
 const CheckboxComponent: FC<checkBoxProps> = ({
   setValue,
   value,
   small,
+
   ...rest
 }) => {
   return (
@@ -43,10 +45,9 @@ const CheckboxComponent: FC<checkBoxProps> = ({
             Platform.OS === 'ios' && cheeckStyle.checkboxSize,
             Platform.OS === 'ios' && small && cheeckStyle.smallCheckboxSize,
           ]}
-          disabled={false}
           value={value}
           onValueChange={setValue}
-          color={value ? palette.primaryDefault : palette.grey4}
+          color={value ? palette.primary : palette.grey4}
           {...rest}
         />
       </Box>
@@ -78,7 +79,7 @@ export const cheeckStyle = ScaledSheet.create({
     borderWidth: '1@s',
     width: '22@s',
     height: '22@s',
-    borderColor: palette.primaryDefault,
+    borderColor: palette.primary,
   },
   borTrans: {
     borderWidth: '1@s',

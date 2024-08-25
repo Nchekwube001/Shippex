@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/mac/.nvm/versions/node/v18.17.1/bin/node /Users/mac/.nvm/versions/node/v18.17.1/bin/yarn add react-native-iphone-x-helper
+  /Users/mac/.nvm/versions/node/v18.17.1/bin/node /Users/mac/.nvm/versions/node/v18.17.1/bin/yarn add expo-checkbox
 
 PATH: 
   /Users/mac/.nvm/versions/node/v18.17.1/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/Users/mac/Library/Android/sdk/emulator:/Users/mac/Library/Android/sdk/platform-tools:/Users/mac/documents/flutter/bin:/Users/mac/local/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: connect ENETUNREACH 2606:4700::6810:1d22:443
+  Error: connect ENETUNREACH 2606:4700::6810:1e22:443
       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1495:16)
 
 npm manifest: 
