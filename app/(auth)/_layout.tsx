@@ -22,6 +22,12 @@ const AuthLayout = (props: Props) => {
         headerShown: false,
       }}>
       <Stack.Screen name="onboarding" />
+      <Stack.Screen
+        name="login"
+        // options={{
+        //   presentation: 'modal',
+        // }}
+      />
     </Stack>
   );
 };

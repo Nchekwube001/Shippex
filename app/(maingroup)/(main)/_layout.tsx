@@ -6,10 +6,8 @@ const MainLayout = () => {
     <Stack
       screenOptions={{
         headerShown: false,
-      }}>
-      <Stack.Screen name="completeprofile" />
-      <Stack.Screen name="personalitytest" />
-    </Stack>
+      }}
+    />
   );
 };
 

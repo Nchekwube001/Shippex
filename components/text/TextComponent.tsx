@@ -15,9 +15,7 @@ const TextComponent: FC<textProps> = ({
   style,
   children,
   onPress,
-  secondary,
   primary,
-  gray,
 }) => {
   return (
     <Text
@@ -25,13 +23,11 @@ const TextComponent: FC<textProps> = ({
       onPress={onPress}
       style={
         [
-          globalStyle.fontSansMedium,
+          globalStyle.fontInterRegular,
           globalStyle.fontSize14,
           globalStyle.fontWeight500,
           globalStyle.textBlack,
 
-          secondary && globalStyle.textSecondary,
-          gray && globalStyle.textGray4,
           primary && globalStyle.textPrimary,
           style,
         ] as any

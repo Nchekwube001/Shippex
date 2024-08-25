@@ -1,9 +1,8 @@
 import {TouchableOpacityProps} from 'react-native';
-import React, {FC, useCallback, useEffect} from 'react';
+import React, {FC} from 'react';
 import TextComponent from '../text/TextComponent';
 import globalStyle from '../../globalStyle/globalStyle';
 import Box from '../layout/Box';
-import {useSharedValue} from 'react-native-reanimated';
 import PressableComponent from '../pressable/PressableComponent';
 import {Spinner, spinnerStyle} from '../loader/Spinner';
 interface buttonProps extends TouchableOpacityProps {
@@ -13,13 +12,6 @@ interface buttonProps extends TouchableOpacityProps {
   loading?: boolean;
   transparent?: boolean;
   secondary?: boolean;
-  grayBg?: boolean;
-  secondaryFilled?: boolean;
-  error?: boolean;
-  text14?: boolean;
-  redBtn?: boolean;
-  orangeText?: boolean;
-  orangeBtn?: boolean;
 }
 
 const ButtonComponent: FC<buttonProps> = ({
@@ -27,32 +19,9 @@ const ButtonComponent: FC<buttonProps> = ({
   title,
   onPress,
   loading = false,
-  text14,
-  transparent,
   secondary,
-  secondaryFilled,
-  orangeText,
-  redBtn,
-  grayBg,
   ...rest
 }) => {
-  const currentPos = useSharedValue(0);
-  const changer = useCallback(() => {
-    if (loading) {
-      if (currentPos.value === 2) {
-        currentPos.value = 0;
-      } else {
-        currentPos.value = currentPos.value + 1;
-      }
-    }
-  }, [currentPos, loading]);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      changer();
-    }, 250);
-
-    return () => clearInterval(interval);
-  }, [changer]);
   return (
     <PressableComponent
       activeOpacity={0.8}
@@ -67,37 +36,25 @@ const ButtonComponent: FC<buttonProps> = ({
         globalStyle.alignItemsCenter,
       ]}>
       <Box
-        // backgroundColor={'mainBackground'}
         style={[
           globalStyle.w10,
-          globalStyle.bgPurplePrimary,
+          globalStyle.bgPrimary,
+          secondary && globalStyle.bgWhite,
           globalStyle.textInputHeight,
           globalStyle.flexrow,
           globalStyle.justifyCenter,
           globalStyle.alignItemsCenter,
-          globalStyle.br,
-          // globalStyle.borderRadius16,
-          (transparent || orangeText) && globalStyle.bgTransparent,
-          transparent && globalStyle.borderBtnTransparent,
-          secondaryFilled && globalStyle.bgSecondary,
-          disabled && globalStyle.bgDisabled,
-          secondaryFilled && disabled && globalStyle.bgDisabled,
-          // secondaryFilled && disabled && globalStyle.borderBtnPurple,
-          secondary && globalStyle.bgSecondaryBtn,
-          grayBg && globalStyle.bgGreyBtn,
-          redBtn && globalStyle.bgDel,
+          globalStyle.borderRadius8,
         ]}>
         {!loading && (
           <TextComponent
-            secondary={grayBg || secondary}
+            secondary={secondary}
             style={[
               globalStyle.flexrow,
               globalStyle.textCenter,
-              (!grayBg || !secondary) && globalStyle.textWhite,
-              globalStyle.fontSize16,
-              secondary && globalStyle.textSecondary,
-              orangeText && globalStyle.textSecondaryDark,
-              text14 && globalStyle.fontSize14,
+              globalStyle.textWhite,
+              secondary && globalStyle.textPrimary,
+              globalStyle.fontSize15,
               globalStyle.fontWeight500,
             ]}>
             {title}

@@ -4,7 +4,6 @@ import TextComponent from '../text/TextComponent';
 import globalStyle from '../../globalStyle/globalStyle';
 import inputStyles from './inputStyles';
 import pallete from '../../constants/colors/pallete';
-import {MotiView} from 'moti';
 import Box from '../layout/Box';
 import EyeOpen from '@/assets/svgs/eyeOpen.svg';
 import EyeClosed from '@/assets/svgs/eyeClosed.svg';
@@ -77,17 +76,11 @@ const PasswordInputComponent: FC<InputProps> = ({
   return (
     <Animated.View style={[globalStyle.w10, animatedStyle]}>
       {title && (
-        <TextComponent
-          style={[
-            globalStyle.fontSize13,
-            globalStyle.fontMatterRegular,
-
-            globalStyle.mb0p8,
-          ]}>
+        <TextComponent style={[globalStyle.fontSize13, globalStyle.mb0p8]}>
           {title}
         </TextComponent>
       )}
-      <MotiView
+      <Box
         style={[
           globalStyle.w10,
           globalStyle.justifyCenter,
@@ -104,15 +97,12 @@ const PasswordInputComponent: FC<InputProps> = ({
             globalStyle.textInputHeight,
             globalStyle.px1,
             globalStyle.fontSize14,
-            globalStyle.fontMatterRegular,
-
             globalStyle.w10,
             globalStyle.justifyCenter,
             globalStyle.alignItemsCenter,
-            globalStyle.borderInput,
             globalStyle.bgTextInput,
 
-            globalStyle.borderRadius4,
+            globalStyle.borderRad,
             focus && inputStyles.focusedStyle,
             !!errorText && inputStyles.errorStyle,
             whiteBg && globalStyle.bgWhite,
@@ -142,7 +132,7 @@ const PasswordInputComponent: FC<InputProps> = ({
             <Box>{iconView}</Box>
           </PressableComponent>
         </Box>
-      </MotiView>
+      </Box>
 
       {errorText && (
         <TextComponent

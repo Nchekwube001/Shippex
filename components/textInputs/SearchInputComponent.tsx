@@ -4,9 +4,8 @@ import TextComponent from '../text/TextComponent';
 import globalStyle from '../../globalStyle/globalStyle';
 import inputStyles from './inputStyles';
 import pallete from '../../constants/colors/pallete';
-import {MotiView} from 'moti';
 import Box from '../layout/Box';
-import Search from '../../assets/svgs/SearchGray.svg';
+import Search from '../../assets/svgs/Search.svg';
 import PressableComponent from '../pressable/PressableComponent';
 import Animated, {
   Extrapolation,
@@ -70,7 +69,7 @@ const SearchInputComponent: FC<InputProps> = ({
           {title}
         </TextComponent>
       )}
-      <MotiView
+      <Box
         style={[
           globalStyle.w10,
           globalStyle.justifyCenter,
@@ -91,9 +90,9 @@ const SearchInputComponent: FC<InputProps> = ({
             globalStyle.w10,
             globalStyle.justifyCenter,
             globalStyle.alignItemsCenter,
-            globalStyle.borderInput,
-            globalStyle.borderRadius6,
+            globalStyle.borderRad,
             globalStyle.pl4,
+            globalStyle.bgTextInput,
             focus && inputStyles.focusedStyle,
             !!errorText && inputStyles.errorStyle,
             whiteBg && globalStyle.bgWhite,
@@ -125,7 +124,7 @@ const SearchInputComponent: FC<InputProps> = ({
             </Box>
           </PressableComponent>
         </Box>
-      </MotiView>
+      </Box>
 
       {errorText && (
         <TextComponent

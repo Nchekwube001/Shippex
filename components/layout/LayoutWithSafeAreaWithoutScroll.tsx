@@ -8,46 +8,27 @@ import React, {FC, ReactNode} from 'react';
 import globalStyle from '../../globalStyle/globalStyle';
 import Box from './Box';
 import pallete from '../../constants/colors/pallete';
-import {StatusBar} from 'react-native';
-import {useAppSelector} from '../../constants/utils/hooks';
+import {StatusBar} from 'expo-status-bar';
 import {SafeAreaView} from 'react-native-safe-area-context';
 interface MainLayoutProps {
   children: ReactNode;
-  grayBg?: boolean;
-  transparent?: boolean;
-  showAvoiding?: boolean;
-  purpleStatus?: boolean;
-  lightBar?: boolean;
-  purpleDarkBg?: boolean;
   noTouchable?: boolean;
-  purpleBg?: boolean;
+  primaryStatus?: boolean;
 }
 const LayoutWithSafeAreaWithoutScroll: FC<MainLayoutProps> = ({
   children,
-  showAvoiding = true,
-  transparent,
   noTouchable,
-  purpleStatus,
-  lightBar,
-  purpleDarkBg,
-  purpleBg,
+  primaryStatus,
 }) => {
-  const {darkMode} = useAppSelector(state => state.darkMode);
   return (
     <>
-      {showAvoiding ? (
+      {
         <KeyboardAvoidingView
           style={[globalStyle.flexOne]}
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
           <StatusBar
-            backgroundColor={
-              purpleStatus
-                ? pallete.primaryDark
-                : darkMode
-                ? pallete.black
-                : pallete.white
-            }
-            barStyle={darkMode || purpleBg ? 'light-content' : 'dark-content'}
+            backgroundColor={primaryStatus ? pallete.primary : pallete.white}
+            style={primaryStatus ? 'light' : 'dark'}
           />
 
           <SafeAreaView
@@ -55,19 +36,12 @@ const LayoutWithSafeAreaWithoutScroll: FC<MainLayoutProps> = ({
               globalStyle.flexOne,
               globalStyle.bgWhite,
               globalStyle.ptStatus,
-              transparent && globalStyle.bgTransparent,
-              purpleDarkBg && globalStyle.bgPurpleDark,
-              purpleBg && globalStyle.bgPurpleLayout,
-
-              // darkMode && globalStyle.bgDarkPrimary,
+              primaryStatus && globalStyle.bgPrimary,
             ]}>
             <Box
               flex={1}
-              backgroundColor={purpleDarkBg ? 'bgPurpleDark' : 'mainBackground'}
-              style={[
-                transparent && globalStyle.bgTransparent,
-                purpleBg && globalStyle.bgPurpleLayout,
-              ]}>
+              backgroundColor={'mainBackground'}
+              style={[primaryStatus && globalStyle.bgPrimary]}>
               {noTouchable ? (
                 <>{children}</>
               ) : (
@@ -81,50 +55,7 @@ const LayoutWithSafeAreaWithoutScroll: FC<MainLayoutProps> = ({
             </Box>
           </SafeAreaView>
         </KeyboardAvoidingView>
-      ) : (
-        <Box flex={1}>
-          <StatusBar
-            backgroundColor={
-              purpleStatus
-                ? pallete.primaryDark
-                : darkMode
-                ? pallete.black
-                : pallete.white
-            }
-            barStyle={
-              lightBar
-                ? 'light-content'
-                : darkMode
-                ? 'light-content'
-                : 'dark-content'
-            }
-          />
-          <SafeAreaView
-            style={[
-              globalStyle.flexOne,
-              globalStyle.bgWhite,
-              transparent && globalStyle.bgTransparent,
-              purpleDarkBg && globalStyle.bgPurpleDark,
-              // darkMode && globalStyle.bgDarkPrimary,
-            ]}>
-            <Box
-              flex={1}
-              backgroundColor={purpleDarkBg ? 'bgPurpleDark' : 'mainBackground'}
-              style={[transparent && globalStyle.bgTransparent]}>
-              {noTouchable ? (
-                <>{children}</>
-              ) : (
-                <TouchableWithoutFeedback
-                  accessible={false}
-                  onPress={Keyboard.dismiss}
-                  style={[globalStyle.flexOne]}>
-                  {children}
-                </TouchableWithoutFeedback>
-              )}
-            </Box>
-          </SafeAreaView>
-        </Box>
-      )}
+      }
     </>
   );
 };

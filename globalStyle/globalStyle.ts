@@ -8,9 +8,7 @@ import {
 import {ScaledSheet} from 'react-native-size-matters';
 import pallete from '../constants/colors/pallete';
 export const {height, width} = Dimensions.get('window');
-import {getStatusBarHeight} from 'react-native-iphone-x-helper';
 
-export const STATUSBAR_HEIGHT = getStatusBarHeight();
 export type styleType = ViewStyle | TextStyle | ImageStyle;
 
 const globalStyle = ScaledSheet.create(
@@ -412,6 +410,9 @@ const globalStyle = ScaledSheet.create(
     pb0p3: {
       paddingBottom: '3@s',
     },
+    pb0p4: {
+      paddingBottom: '4@s',
+    },
     pb0p8: {
       paddingBottom: '8@s',
     },
@@ -594,8 +595,6 @@ const globalStyle = ScaledSheet.create(
       paddingVertical: '100@vs',
     },
     ptStatus: {
-      // paddingTop: STATUSBAR_HEIGHT + 10,
-      // paddingTop: StatusBar.currentHeight,
       paddingTop: 0,
     },
     pt0p2: {
@@ -603,6 +602,9 @@ const globalStyle = ScaledSheet.create(
     },
     pt0p4: {
       paddingTop: '4@vs',
+    },
+    pt0p6: {
+      paddingTop: '6@vs',
     },
     pt0p8: {
       paddingTop: '8@vs',
@@ -874,105 +876,24 @@ const globalStyle = ScaledSheet.create(
     mb3: {
       marginBottom: '30@ms',
     },
-    mb4: {
-      marginBottom: '40@ms',
+
+    fontInterSemiBold: {
+      fontFamily: 'Inter-SemiBold',
     },
-    mb5: {
-      marginBottom: '50@ms',
+    fontInterRegular: {
+      fontFamily: 'Inter-Regular',
     },
-    mb6: {
-      marginBottom: '60@ms',
+    fontInterMedium: {
+      fontFamily: 'Inter-Medium',
     },
-    mb7: {
-      marginBottom: '70@ms',
+
+    fontGroteskBook20: {
+      fontFamily: 'HankenGrotesk-Book20',
     },
-    mb8: {
-      marginBottom: '80@ms',
+    fontGroteskBook25: {
+      fontFamily: 'HankenGrotesk-Book25',
     },
-    mb9: {
-      marginBottom: '90@ms',
-    },
-    mb10: {
-      marginBottom: '100@ms',
-    },
-    lineHeight24: {
-      lineHeight: '24@s',
-    },
-    lineHeight26: {
-      lineHeight: '26@s',
-    },
-    lineHeight28: {
-      lineHeight: '28@s',
-    },
-    lineHeight22: {
-      lineHeight: '22@s',
-    },
-    lineHeight20: {
-      lineHeight: '20@s',
-    },
-    lineHeight18: {
-      lineHeight: '18@s',
-    },
-    letterSpacing: {
-      letterSpacing: '0.6@s',
-    },
-    fontSansBlack: {
-      fontFamily: 'DMSans-Black',
-    },
-    fontSansBold: {
-      fontFamily: 'DMSans-Bold',
-    },
-    fontMatterBold: {
-      fontFamily: 'Matter-Bold',
-    },
-    fontSansExtraBold: {
-      fontFamily: 'DMSans-ExtraBold',
-    },
-    fontSansLight: {
-      fontFamily: 'DMSans-Light',
-    },
-    fontSansSemiBold: {
-      fontFamily: 'DMSans-SemiBold',
-    },
-    fontSansMedium: {
-      fontFamily: 'DMSans-Medium',
-    },
-    fontMatterLight: {
-      fontFamily: 'Matter-Light',
-    },
-    fontMatterSemiBold: {
-      fontFamily: 'Matter-SemiBold',
-    },
-    fontMatterMedium: {
-      fontFamily: 'Matter-Medium',
-    },
-    fontSansRegular: {
-      fontFamily: 'DMSans-Regular',
-    },
-    fontMatterRegular: {
-      fontFamily: 'Matter-Regular',
-    },
-    fontGroteskBlack: {
-      fontFamily: 'HankenGrotesk-Black',
-    },
-    fontGroteskBold: {
-      fontFamily: 'HankenGrotesk-Bold',
-    },
-    fontGroteskExtraBold: {
-      fontFamily: 'HankenGrotesk-ExtraBold',
-    },
-    fontGroteskLight: {
-      fontFamily: 'HankenGrotesk-Light',
-    },
-    fontGroteskSemiBold: {
-      fontFamily: 'HankenGrotesk-SemiBold',
-    },
-    fontGroteskMedium: {
-      fontFamily: 'HankenGrotesk-Medium',
-    },
-    fontGroteskRegular: {
-      fontFamily: 'HankenGrotesk-Regular',
-    },
+
     fontWeight300: {
       fontWeight: '300',
     },
@@ -1076,12 +997,27 @@ const globalStyle = ScaledSheet.create(
     textCenter: {
       textAlign: 'center',
     },
+    textBlack: {
+      color: pallete.black,
+    },
+    textPrimary: {
+      color: pallete.primary,
+    },
+    textWhite: {
+      color: pallete.white,
+    },
     textRight: {
       textAlign: 'right',
     },
 
+    bgTextInput: {
+      backgroundColor: pallete.mainGray,
+    },
     bgWhite: {
       backgroundColor: pallete.white,
+    },
+    bgPrimary: {
+      backgroundColor: pallete.primary,
     },
     textInputHeight: {
       height: '46@s',

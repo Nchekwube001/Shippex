@@ -23,7 +23,7 @@ const inputStyles = ScaledSheet.create({
   },
   focusedStyle: {
     borderWidth: '1@s',
-    borderColor: pallete.primaryDefault,
+    borderColor: pallete.primary,
     // borderBottomLeftRadius: '4@s',
     // borderBottomRightRadius: '4@s',
   },

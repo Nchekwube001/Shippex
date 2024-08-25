@@ -1,12 +1,12 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-const profile = () => {
+const scan = () => {
   return (
     <View>
-      <Text>profile</Text>
+      <Text>scan</Text>
     </View>
   );
 };
 
-export default profile;
+export default scan;

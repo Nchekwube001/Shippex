@@ -73,19 +73,14 @@ const TextInputComponent: FC<textInputProps> = ({
             globalStyle.w10,
             globalStyle.mb0p8,
           ]}>
-          <TextComponent
-            style={[globalStyle.fontSize13, globalStyle.fontMatterRegular]}>
+          <TextComponent style={[globalStyle.fontSize13]}>
             {title}
           </TextComponent>
           {rightText && (
             <PressableComponent onPress={onTextPress}>
               <TextComponent
                 primary
-                style={[
-                  globalStyle.fontSize13,
-                  globalStyle.fontMatterRegular,
-                  globalStyle.underline,
-                ]}>
+                style={[globalStyle.fontSize13, globalStyle.underline]}>
                 {rightText}
               </TextComponent>
             </PressableComponent>
@@ -102,17 +97,14 @@ const TextInputComponent: FC<textInputProps> = ({
           globalStyle.textInputHeight,
           globalStyle.px1,
           globalStyle.fontSize14,
-          globalStyle.fontMatterRegular,
-
           multiline && globalStyle.MultiTextInputHeight,
           multiline && globalStyle.pt1,
           multiline && globalStyle.textAlignVertical,
           globalStyle.w10,
           globalStyle.justifyCenter,
           globalStyle.alignItemsCenter,
-          globalStyle.borderInput,
           globalStyle.bgTextInput,
-          globalStyle.borderRadius4,
+          globalStyle.borderRad,
           focus && inputStyles.focusedStyle,
           !!errorText && inputStyles.errorStyle,
           whiteBg && globalStyle.bgWhite,
